@@ -60,6 +60,7 @@
                         <!--<value>dc.description.tableofcontents</value>-->
                         <!--Copyright text-->
                         <value>dc.rights</value>
+                        <value>ore.Aggregation.edmrights</value>                            
                         <!--Community name-->
                         <!--<value>dc.title</value>-->
                     </list>
@@ -75,6 +76,7 @@
                         <!--<value>dc.description.tableofcontents</value>-->
                         <!--Copyright text-->
                         <value>dc.rights</value>
+                        <value>ore.Aggregation.edmrights</value> 
                         <!--Collection name-->
                         <!--<value>dc.title</value>-->
                     </list>
@@ -150,15 +152,15 @@
                 <property name="metadataFields">
                     <list>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.title"/>
+                            <property name="field" value="edm.ProvidedCHO.dctitle"/>
                             <property name="snippets" value="5"/>
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.contributor.author"/>
+                            <property name="field" value="edm.ProvidedCHO.dccreator"/>
                             <property name="snippets" value="5"/>
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.description.abstract"/>
+                            <property name="field" value="edm.ProvidedCHO.dcdescription"/>
                             <property name="maxSize" value="250"/>
                             <property name="snippets" value="2"/>
                         </bean>
@@ -177,10 +179,10 @@
                 the metadata fields below-->
                 <property name="similarityMetadataFields">
                     <list>
-                        <value>dc.title</value>
-                        <value>dc.contributor.author</value>
-                        <value>dc.creator</value>
-                        <value>dc.subject</value>
+                        <value>edm.ProvidedCHO.dctitle</value>
+                        <value>edm.ProvidedCHO.dccreator</value>
+                        <value>edm.ProvidedCHO.dccoverage</value>
+                        <value>edm.ProvidedCHO.dcsubject</value>
                     </list>
                 </property>
                 <!--The minimum number of matching terms across the metadata fields above before an item is found as related -->
@@ -247,15 +249,15 @@
                 <property name="metadataFields">
                     <list>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.title"/>
+                            <property name="field" value="edm.ProvidedCHO.dctitle"/>
                             <property name="snippets" value="5"/>
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.contributor.author"/>
+                            <property name="field" value="edm.ProvidedCHO.dccreator"/>
                             <property name="snippets" value="5"/>
                         </bean>
                         <bean class="org.dspace.discovery.configuration.DiscoveryHitHighlightFieldConfiguration">
-                            <property name="field" value="dc.description.abstract"/>
+                            <property name="field" value="edm.ProvidedCHO.dcdescription"/>
                             <property name="maxSize" value="250"/>
                             <property name="snippets" value="2"/>
                         </bean>
@@ -368,7 +370,7 @@
         <property name="indexFieldName" value="title"/>
         <property name="metadataFields">
             <list>
-                <value>dc.title</value>
+                <value>edm.ProvidedCHO.dctitle</value>
             </list>
         </property>
     </bean>
@@ -377,8 +379,7 @@
         <property name="indexFieldName" value="author"/>
         <property name="metadataFields">
             <list>
-                <value>dc.contributor.author</value>
-                <value>dc.creator</value>
+                <value>edm.ProvidedCHO.dccreator</value>
             </list>
         </property>
         <property name="facetLimit" value="10"/>
@@ -390,7 +391,7 @@
         <property name="indexFieldName" value="subject"/>
         <property name="metadataFields">
             <list>
-                <value>dc.subject.*</value>
+                <value>edm.ProvidedCHO.dcsubject</value>
             </list>
         </property>
         <property name="facetLimit" value="10"/>
@@ -403,7 +404,7 @@
         <property name="indexFieldName" value="dateIssued"/>
         <property name="metadataFields">
             <list>
-                <value>dc.date.issued</value>
+                <value>edm.ProvidedCHO.dcdate</value>
             </list>
         </property>
         <property name="type" value="date"/>
@@ -424,7 +425,7 @@
 
     <!--Sort properties-->
     <bean id="sortTitle" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
-        <property name="metadataField" value="dc.title"/>
+        <property name="metadataField" value="edm.ProvidedCHO.dctitle"/>
     </bean>
 
     <bean id="sortDateIssued" class="org.dspace.discovery.configuration.DiscoverySortFieldConfiguration">
